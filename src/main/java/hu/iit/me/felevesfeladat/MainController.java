@@ -7,7 +7,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping(path="article")
+@RequestMapping(path="engine")
 public class MainController {
 
     private final EngineService engineService;

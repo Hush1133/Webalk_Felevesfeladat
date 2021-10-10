@@ -1,7 +1,11 @@
 package hu.iit.me.felevesfeladat;
 
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class EngineServiceImpl implements EngineService {
     private final int MAXIMUM_ENGINE_COUNT = 10;
     private final EngineRepository engineRepository;
@@ -21,11 +25,11 @@ public class EngineServiceImpl implements EngineService {
     }
 
     @Override
-    public Long save(EngineDto articleDto) {
+    public Long save(EngineDto engineDto) {
         if (engineRepository.findAll().size() >= MAXIMUM_ENGINE_COUNT) {
             throw new TooMuchEngineException();
         }
-        return engineRepository.save(articleDto);
+        return engineRepository.save(engineDto);
     }
 
     @Override

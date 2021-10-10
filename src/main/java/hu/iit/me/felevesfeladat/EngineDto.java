@@ -4,25 +4,26 @@ package hu.iit.me.felevesfeladat;
 
 
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 public class EngineDto {
     @NotNull
-    private static long id;
+    private long id;
+    @NotBlank
+    @NotNull
+    private String camshaft;
 
     @NotNull
-    private static String camshaft;
-
-    @NotNull
-    private static int displacement;
+    private int displacement;
 
     @Min(2)
-    private static int valves;
+    private  int valves;
 
     @NotNull
-    private static String propellant;
+    private String propellant;
 
-    public static long getId() {
+    public long getId() {
         return id;
     }
 
@@ -30,7 +31,7 @@ public class EngineDto {
         this.id = id;
     }
 
-    public static String getCamshaft() {
+    public String getCamshaft() {
         return camshaft;
     }
 
@@ -38,7 +39,7 @@ public class EngineDto {
         this.camshaft = camshaft;
     }
 
-    public static int getDisplacement() {
+    public int getDisplacement() {
         return displacement;
     }
 
