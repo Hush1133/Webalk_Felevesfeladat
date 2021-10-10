@@ -1,9 +1,10 @@
 package hu.iit.me.felevesfeladat;
 
 
-import org.jetbrains.annotations.NotNull;
+
 
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 public class EngineDto {
     @NotNull

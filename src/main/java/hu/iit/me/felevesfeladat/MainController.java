@@ -12,27 +12,27 @@ public class MainController {
 
     private final EngineService engineService;
 
-    public MainController(EngineService articleService) {
-        this.engineService = articleService;
+    public MainController(EngineService engineService) {
+        this.engineService = engineService;
     }
 
     @GetMapping(path="", produces= MediaType.APPLICATION_JSON_VALUE)
-    public List<EngineDto> allArticles() {
+    public List<EngineDto> allEngine() {
         return engineService.findAll();
     }
 
     @PostMapping(path="")
-    public void newArticle(@RequestBody @Valid EngineDto articleDto) {
-        engineService.save(articleDto);
+    public void newEngine(@RequestBody @Valid EngineDto engineDto) {
+        engineService.save(engineDto);
     }
 
     @PutMapping(path="/")
-    public void replaceArticle(@RequestBody @Valid EngineDto EngineDto) {
+    public void replaceEngine(@RequestBody @Valid EngineDto EngineDto) {
         engineService.save(EngineDto);
     }
 
     @DeleteMapping (path="/{id}")
-    public void deleteArticle(@PathVariable("id") Long id) {
+    public void deleteEngine(@PathVariable("id") Long id) {
         engineService.deleteById(id);
     }
 
